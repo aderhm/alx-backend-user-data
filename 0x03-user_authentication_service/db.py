@@ -36,6 +36,8 @@ class DB:
     def add_user(self, email: str, password: str) -> User:
         """ Save a new user to the database
         """
+        if email is None or password is None:
+            return None
         hashed_password = bcrypt.hashpw(
             password.encode('utf-8'),
             bcrypt.gensalt()).decode('utf-8')
