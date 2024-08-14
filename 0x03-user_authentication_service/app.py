@@ -42,7 +42,7 @@ def login():
     email = request.form.get("email")
     password = request.form.get("password")
     if AUTH.valid_login(email, password):
-        sid = AUTH.create_session(email)
+        AUTH.create_session(email)
         return jsonify({
             "email": email,
             "message": "logged in"
