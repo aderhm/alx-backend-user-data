@@ -98,8 +98,7 @@ class Auth:
             self._db.update_user(
                 user.id,
                 hashed_password=hashed_password,
-                reset_token=reset_token
+                reset_token=None
                 )
-            return None
         except NoResultFound:
             raise ValueError
